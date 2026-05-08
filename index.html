@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KAMELEON — Salon Fryzjerski | Koloryzacje, Strzyżenia, Pielęgnacja</title>
+<meta name="description" content="Salon Fryzjerski Kameleon — odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi. Umów wizytę telefonicznie." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="icon" href="./assets/logo.png" />
+<meta property="og:title" content="KAMELEON — Salon Fryzjerski" />
+<meta property="og:description" content="Odkryj swoją nową wersję w Salonie Kameleon." />
+<meta property="og:image" content="./assets/hero.jpg" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<style>
+:root{
+  --bg:#0a0a0a; --surface:#121212; --card:#161616; --border:#262626;
+  --text:#f5f5f5; --muted:#a3a3a3; --primary:#39ff14; --primary-dark:#2bd80a;
+  --shadow-glow:0 0 30px rgba(57,255,20,.35);
+  --container:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.75rem)}
+h3{font-size:1.25rem}
+.container{max-width:var(--container);margin:0 auto;padding:0 1.25rem}
+.section{padding:5rem 0}
+@media(min-width:768px){.section{padding:7rem 0}}
+.bg-card{background:var(--surface)}
+.eyebrow{display:inline-block;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;font-weight:700}
+.text-neon{color:var(--primary);text-shadow:0 0 14px rgba(57,255,20,.45)}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:6px;font-weight:700;font-family:'Poppins',sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:.85rem;border:1px solid transparent;cursor:pointer;transition:all .25s}
+.btn-cta{background:var(--primary);color:#0a0a0a;box-shadow:var(--shadow-glow)}
+.btn-cta:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.btn:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+
+/* NAV */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s}
+header.nav.scrolled{background:rgba(10,10,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:.6rem;cursor:pointer;background:none;border:0;color:inherit}
+.brand img{width:40px;height:40px;object-fit:contain}
+.brand span{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:.2em;font-size:.95rem}
+.nav-links{display:none;gap:1.75rem}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav-links button{background:none;border:0;color:var(--muted);font-weight:600;font-size:.9rem;cursor:pointer;transition:color .2s}
+.nav-links button:hover{color:var(--primary)}
+.nav-cta{display:none}
+@media(min-width:900px){.nav-cta{display:inline-flex;padding:.6rem 1.1rem;font-size:.8rem}}
+.burger{display:inline-flex;background:none;border:1px solid var(--border);color:var(--text);padding:.55rem;border-radius:6px;cursor:pointer}
+@media(min-width:900px){.burger{display:none}}
+.mobile-menu{display:none;border-top:1px solid var(--border);background:var(--bg)}
+.mobile-menu.open{display:block}
+.mobile-menu nav{display:flex;flex-direction:column;padding:1rem 1.25rem;gap:.25rem}
+.mobile-menu button{text-align:left;padding:.85rem .5rem;background:none;border:0;color:var(--text);font-weight:600;font-size:1rem;cursor:pointer}
+.mobile-menu .btn{margin-top:.75rem;justify-content:center}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .overlay{position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 40%,rgba(10,10,10,.55) 0%,rgba(10,10,10,.85) 60%,rgba(10,10,10,.95) 100%)}
+.hero .container{position:relative;padding-top:6rem;padding-bottom:5rem}
+.hero p.lead{margin:1.5rem auto 0;max-width:640px;font-size:1.125rem;color:var(--muted)}
+.hero .actions{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:center}
+@media(min-width:640px){.hero .actions{flex-direction:row}}
+.scroll-down{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:var(--primary);animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-10px)}}
+
+/* GRID UTILS */
+.grid{display:grid;gap:1.5rem}
+.grid-2{grid-template-columns:1fr}
+.grid-3{grid-template-columns:1fr}
+@media(min-width:700px){.grid-2{grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.grid-3{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+/* ABOUT */
+.about-img{position:relative;border-radius:8px;overflow:hidden}
+.about-img img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.about-img::before{content:"";position:absolute;inset:-12px;border-radius:10px;box-shadow:var(--shadow-glow);opacity:.6;z-index:-1}
+.stats{margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:420px}
+.stats div{text-align:center}
+.stats .n{font-family:'Poppins',sans-serif;font-size:1.75rem;font-weight:800;color:var(--primary);text-shadow:0 0 12px rgba(57,255,20,.4)}
+.stats .l{font-size:.75rem;color:var(--muted);margin-top:.25rem}
+.about-text p{margin-top:1rem;color:var(--muted)}
+
+/* OFFER */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative;transition:transform .3s,border-color .3s}
+.card:hover{border-color:var(--primary);transform:translateY(-4px)}
+.card .img-wrap{aspect-ratio:4/5;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.card:hover img{transform:scale(1.05)}
+.card .body{padding:1.5rem}
+.card .body p{color:var(--muted);font-size:.95rem;margin-top:.5rem}
+
+/* WHY US */
+.why-grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
+@media(min-width:700px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+.why-item{padding:1.75rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);transition:border-color .25s,transform .25s}
+.why-item:hover{border-color:var(--primary);transform:translateY(-3px)}
+.why-item .icon{width:54px;height:54px;border-radius:8px;background:rgba(57,255,20,.12);color:var(--primary);display:inline-flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.why-item p{color:var(--muted);font-size:.95rem;margin-top:.5rem}
+
+/* GALLERY */
+.gallery{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:600px){.gallery{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.gallery{grid-template-columns:repeat(3,1fr)}}
+.gallery figure{margin:0}
+.gallery button{display:block;width:100%;padding:0;background:none;border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;position:relative}
+.gallery button:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.gallery img{aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .7s}
+.gallery button:hover img{transform:scale(1.05)}
+.gallery figcaption{margin-top:.75rem;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+.faq .item{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.faq .q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem;background:none;border:0;color:var(--text);font-family:'Poppins',sans-serif;font-weight:600;text-align:left;cursor:pointer;font-size:1rem}
+.faq .q:hover{color:var(--primary)}
+.faq .q i{color:var(--primary);transition:transform .3s}
+.faq .item.open .q i{transform:rotate(45deg)}
+.faq .a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted)}
+.faq .item.open .a{max-height:400px}
+.faq .a p{padding:0 1.25rem 1.25rem}
+
+/* CONTACT */
+.contact-grid{display:grid;gap:1.25rem;grid-template-columns:1fr;max-width:900px;margin:3rem auto 0}
+@media(min-width:700px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.contact-grid a{padding:1.75rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);text-align:center;transition:border-color .25s}
+.contact-grid a:hover{border-color:var(--primary)}
+.contact-grid .ico{margin:0 auto;width:48px;height:48px;border-radius:8px;background:rgba(57,255,20,.12);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .2s}
+.contact-grid a:hover .ico{background:var(--primary);color:#0a0a0a}
+.contact-grid .lbl{margin-top:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.contact-grid .val{margin-top:.25rem;font-family:'Poppins',sans-serif;font-weight:600}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--bg)}
+.foot{display:grid;gap:2rem;padding:3rem 0;grid-template-columns:1fr}
+@media(min-width:700px){.foot{grid-template-columns:repeat(3,1fr);align-items:start}}
+.foot .socials{display:flex;gap:.6rem}
+@media(min-width:700px){.foot .socials{justify-content:flex-end}}
+.foot .socials a{width:42px;height:42px;border:1px solid var(--border);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:var(--text);transition:all .2s}
+.foot .socials a:hover{border-color:var(--primary);color:var(--primary)}
+.foot .copy{font-size:.9rem;color:var(--muted);text-align:center}
+.foot .copy button{display:block;margin:.5rem auto 0;background:none;border:0;color:var(--text);cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.foot .copy button:hover{color:var(--primary)}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1rem;animation:fade .25s}
+.modal.open{display:flex}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal .close{position:absolute;top:1.25rem;right:1.25rem;background:none;border:1px solid var(--border);color:var(--text);padding:.55rem;border-radius:6px;cursor:pointer}
+.modal .close:hover{color:var(--primary)}
+.lightbox figure{max-width:1100px;width:100%}
+.lightbox img{max-height:80vh;width:100%;object-fit:contain;border-radius:8px}
+.lightbox figcaption{text-align:center;margin-top:1rem;color:var(--muted)}
+.policy{overflow-y:auto;align-items:flex-start}
+.policy .inner{max-width:780px;width:100%;padding:3rem 1.25rem}
+.policy h3{margin-top:1.5rem;color:var(--text);font-size:1.1rem}
+.policy p{color:var(--muted);margin-top:.5rem}
+.policy .actions{margin-top:2.5rem;text-align:center}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.scroll-down{animation:none}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <button class="brand" onclick="scrollToId('hero')" aria-label="KAMELEON — strona główna">
+      <img src="./assets/logo.png" alt="Logo Salonu Fryzjerskiego Kameleon" width="40" height="40" />
+      <span>KAMELEON</span>
+    </button>
+    <nav class="nav-links" aria-label="Główna nawigacja" id="navLinks"></nav>
+    <a href="tel:+48123456789" class="btn btn-cta nav-cta"><i class="fa-solid fa-phone"></i> +48 123 456 789</a>
+    <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav id="mobileNav" aria-label="Mobilna nawigacja"></nav>
+  </div>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <img class="bg" src="./assets/hero.jpg" alt="Wnętrze nowoczesnego salonu fryzjerskiego Kameleon" width="1920" height="1080" />
+    <div class="overlay"></div>
+    <div class="container">
+      <span class="eyebrow reveal">Salon Fryzjerski</span>
+      <h1 class="reveal">Odkryj swoją <span class="text-neon">nową wersję</span> w Kameleonie</h1>
+      <p class="lead reveal">Odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi. Stylizacje tworzone z pasją, dopasowane do Twojej osobowości.</p>
+      <div class="actions reveal">
+        <a href="tel:+48123456789" class="btn btn-cta"><i class="fa-solid fa-phone"></i> Zadzwoń teraz</a>
+        <a href="#oferta" class="btn btn-ghost">Zobacz ofertę</a>
+      </div>
+    </div>
+    <a href="#o-nas" class="scroll-down" aria-label="Przewiń niżej"><i class="fa-solid fa-chevron-down fa-lg"></i></a>
+  </section>
+
+  <section id="o-nas" class="section">
+    <div class="container grid grid-2">
+      <div class="about-img reveal">
+        <img src="./assets/about.jpg" alt="Zespół stylistów salonu Kameleon przy pracy" loading="lazy" width="1024" height="1024" />
+      </div>
+      <div class="reveal about-text">
+        <span class="eyebrow">O nas</span>
+        <h2>Pasja do fryzjerstwa, której zaufały setki klientów</h2>
+        <p><strong>Salon Fryzjerski Kameleon</strong> to miejsce, w którym pasja do fryzjerstwa łączy się z nowoczesnymi trendami i profesjonalną pielęgnacją.</p>
+        <p>Naszą misją jest pomoc w odkrywaniu Twojej nowej wersji — poprzez odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi.</p>
+        <p>Pracujemy wyłącznie na produktach najwyższej jakości, dbając o zdrowy blask i trwałość każdej stylizacji.</p>
+        <div class="stats">
+          <div><div class="n">12+</div><div class="l">lat doświadczenia</div></div>
+          <div><div class="n">5k+</div><div class="l">klientów rocznie</div></div>
+          <div><div class="n">100%</div><div class="l">naturalnych produktów</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Oferta</span>
+        <h2>Usługi szyte na miarę Twojego stylu</h2>
+        <p class="muted" style="margin-top:1rem">Od subtelnych poprawek po pełne metamorfozy — łączymy najnowsze trendy z indywidualnym podejściem do typu włosów i urody.</p>
+      </div>
+      <div class="grid grid-3" style="margin-top:3rem">
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-1.jpg" alt="Kreatywna koloryzacja włosów" loading="lazy" /></div>
+          <div class="body"><h3>Koloryzacje</h3><p>Odważne i klasyczne — balayage, ombre, refleksy.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-2.jpg" alt="Precyzyjne strzyżenie u stylistki" loading="lazy" /></div>
+          <div class="body"><h3>Strzyżenia</h3><p>Precyzyjne cięcia damskie, męskie i dziecięce.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-3.jpg" alt="Zabieg regeneracji włosów" loading="lazy" /></div>
+          <div class="body"><h3>Pielęgnacja</h3><p>Regeneracja, keratyna, botoks i nawilżenie.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dlaczego-my" class="section">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Dlaczego my</span>
+        <h2>Cztery powody, dla których pokochasz Kameleona</h2>
+      </div>
+      <div class="why-grid" style="margin-top:3rem">
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-award"></i></div><h3>Doświadczeni styliści</h3><p>Zespół z wieloletnią praktyką i pasją do nowych trendów.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-leaf"></i></div><h3>Naturalne produkty</h3><p>Profesjonalne kosmetyki dbające o zdrowie włosów.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Indywidualne podejście</h3><p>Każda stylizacja dopasowana do Twojej urody i osobowości.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-couch"></i></div><h3>Komfortowe wnętrze</h3><p>Nowoczesny, relaksujący klimat — Twoja chwila dla siebie.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Galeria</span>
+        <h2>Wybrane realizacje naszych stylistów</h2>
+      </div>
+      <div class="gallery" id="gallery" style="margin-top:3rem"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Najczęściej zadawane pytania</h2>
+      </div>
+      <div class="faq" id="faq" style="margin-top:3rem"></div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Zapraszamy do salonu</h2>
+        <p class="muted" style="margin-top:1rem">Skontaktuj się z nami telefonicznie lub mailowo — z przyjemnością odpowiemy na wszystkie pytania.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="reveal" href="https://maps.google.com/?q=ul.%20Przyk%C5%82adowa%2010%2C%20Warszawa" target="_blank" rel="noreferrer">
+          <div class="ico"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="lbl">Adres</div><div class="val">ul. Przykładowa 10, Warszawa</div>
+        </a>
+        <a class="reveal" href="tel:+48123456789">
+          <div class="ico"><i class="fa-solid fa-phone"></i></div>
+          <div class="lbl">Telefon</div><div class="val">+48 123 456 789</div>
+        </a>
+        <a class="reveal" href="mailto:kontakt@kameleon-salon.pl">
+          <div class="ico"><i class="fa-solid fa-envelope"></i></div>
+          <div class="lbl">E-mail</div><div class="val">kontakt@kameleon-salon.pl</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div class="brand" style="cursor:default">
+      <img src="./assets/logo.png" alt="Logo Kameleon" width="40" height="40" />
+      <div><div style="font-family:Poppins;font-weight:800;letter-spacing:.2em">KAMELEON</div><div style="font-size:.75rem;color:var(--muted)">Salon Fryzjerski</div></div>
+    </div>
+    <div class="copy">© <span id="year"></span> KAMELEON. Wszystkie prawa zastrzeżone.<button onclick="openPolicy()">Polityka prywatności</button></div>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <button class="close" onclick="closeLightbox()" aria-label="Zamknij"><i class="fa-solid fa-xmark fa-lg"></i></button>
+  <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<div class="modal policy" id="policy" role="dialog" aria-modal="true" aria-labelledby="polTitle">
+  <button class="close" onclick="closePolicy()" aria-label="Zamknij"><i class="fa-solid fa-xmark fa-lg"></i></button>
+  <div class="inner">
+    <h2 id="polTitle">Polityka prywatności</h2>
+    <p style="margin-top:1rem;color:var(--muted)">Niniejsza Polityka prywatności określa zasady przetwarzania danych osobowych w Salonie Fryzjerskim KAMELEON zgodnie z RODO.</p>
+    <h3>1. Administrator danych</h3><p>Administratorem danych jest Salon Fryzjerski KAMELEON.</p>
+    <h3>2. Zakres zbieranych danych</h3><p>Zbieramy dane wyłącznie w zakresie niezbędnym do realizacji wizyt (imię, telefon, e-mail).</p>
+    <h3>3. Cele przetwarzania</h3><p>Dane wykorzystywane są do umawiania i potwierdzania wizyt.</p>
+    <h3>4. Pliki cookies</h3><p>Strona może wykorzystywać cookies w celach statystycznych.</p>
+    <h3>5. Twoje prawa</h3><p>Masz prawo dostępu, poprawiania, usunięcia i sprzeciwu wobec przetwarzania danych.</p>
+    <h3>6. Kontakt</h3><p>W sprawach RODO skontaktuj się z nami telefonicznie lub mailowo.</p>
+    <div class="actions"><button class="btn btn-cta" onclick="closePolicy()">Zamknij</button></div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"KAMELEON","image":"./assets/hero.jpg","telephone":"+48123456789","email":"kontakt@kameleon-salon.pl","address":{"@type":"PostalAddress","streetAddress":"ul. Przykładowa 10","addressLocality":"Warszawa","addressCountry":"PL"},"priceRange":"$$"}
+</script>
+
+<script>
+const SECTIONS=[
+ {id:"o-nas",label:"O nas"},
+ {id:"oferta",label:"Oferta"},
+ {id:"dlaczego-my",label:"Dlaczego my"},
+ {id:"galeria",label:"Galeria"},
+ {id:"faq",label:"FAQ"},
+ {id:"kontakt",label:"Kontakt"}
+];
+const PHOTOS=[
+ {src:"./assets/gal-1.jpg",alt:"Stylowe cięcie bob",cap:"Klasyczny bob z grzywką"},
+ {src:"./assets/gal-2.jpg",alt:"Męska stylizacja fade",cap:"Męski fade i pompadour"},
+ {src:"./assets/gal-3.jpg",alt:"Koloryzacja balayage",cap:"Multicolor balayage"},
+ {src:"./assets/gal-4.jpg",alt:"Upięcie ślubne",cap:"Elegancki kok ślubny"},
+ {src:"./assets/gal-5.jpg",alt:"Stylizacja loków",cap:"Definicja loków"},
+ {src:"./assets/gal-6.jpg",alt:"Pastelowa koloryzacja",cap:"Pastelowy róż"}
+];
+const FAQS=[
+ {q:"Czy konieczna jest wcześniejsza rezerwacja wizyty?",a:"Tak, ze względu na duże zainteresowanie zalecamy umawianie wizyt z wyprzedzeniem — telefonicznie lub osobiście w salonie."},
+ {q:"Jakich produktów używacie podczas zabiegów?",a:"Pracujemy wyłącznie na profesjonalnych kosmetykach uznanych marek, dbając o zdrowie i kondycję włosów."},
+ {q:"Czy oferujecie konsultacje przed metamorfozą?",a:"Oczywiście — przed każdą większą zmianą fryzury odbywa się bezpłatna konsultacja."},
+ {q:"Ile trwa profesjonalna koloryzacja?",a:"W zależności od techniki i długości włosów zabieg trwa od 2 do 4 godzin."},
+ {q:"Czy salon jest przyjazny dzieciom?",a:"Tak, wykonujemy strzyżenia dziecięce w spokojnej atmosferze."}
+];
+
+function scrollToId(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});closeMobile();}
+
+// Build nav
+const navLinks=document.getElementById('navLinks');
+const mobileNav=document.getElementById('mobileNav');
+SECTIONS.forEach(s=>{
+  const b=document.createElement('button');b.textContent=s.label;b.onclick=()=>scrollToId(s.id);navLinks.appendChild(b);
+  const m=document.createElement('button');m.textContent=s.label;m.onclick=()=>scrollToId(s.id);mobileNav.appendChild(m);
+});
+const mCta=document.createElement('a');mCta.className='btn btn-cta';mCta.href='tel:+48123456789';mCta.innerHTML='<i class="fa-solid fa-phone"></i> +48 123 456 789';mobileNav.appendChild(mCta);
+
+// Burger
+const burger=document.getElementById('burger');const mobileMenu=document.getElementById('mobileMenu');
+burger.onclick=()=>{const o=mobileMenu.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.innerHTML=o?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';};
+function closeMobile(){mobileMenu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.innerHTML='<i class="fa-solid fa-bars"></i>';}
+
+// Scroll header
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>navEl.classList.toggle('scrolled',window.scrollY>12),{passive:true});
+
+// Gallery
+const gal=document.getElementById('gallery');
+PHOTOS.forEach((p,i)=>{
+  const f=document.createElement('figure');f.className='reveal';f.style.transitionDelay=(i*60)+'ms';
+  f.innerHTML=`<button onclick="openLightbox(${i})" aria-label="Powiększ: ${p.cap}"><img src="${p.src}" alt="${p.alt}" loading="lazy" width="800" height="800" /></button><figcaption>${p.cap}</figcaption>`;
+  gal.appendChild(f);
+});
+
+// FAQ
+const faqEl=document.getElementById('faq');
+FAQS.forEach((f,i)=>{
+  const d=document.createElement('div');d.className='item reveal'+(i===0?' open':'');
+  d.innerHTML=`<button class="q" aria-expanded="${i===0}"><span>${f.q}</span><i class="fa-solid fa-plus"></i></button><div class="a"><p>${f.a}</p></div>`;
+  d.querySelector('.q').onclick=()=>{const o=d.classList.toggle('open');d.querySelector('.q').setAttribute('aria-expanded',o);};
+  faqEl.appendChild(d);
+});
+// FAQPage JSON-LD
+const faqLd=document.createElement('script');faqLd.type='application/ld+json';
+faqLd.textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":FAQS.map(f=>({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))});
+document.head.appendChild(faqLd);
+
+// Lightbox
+let lbIdx=0;const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+function openLightbox(i){lbIdx=i;lbImg.src=PHOTOS[i].src;lbImg.alt=PHOTOS[i].alt;lbCap.textContent=PHOTOS[i].cap;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){lb.classList.remove('open');document.body.style.overflow='';}
+lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%PHOTOS.length;openLightbox(lbIdx);}
+  if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+PHOTOS.length)%PHOTOS.length;openLightbox(lbIdx);}
+});
+
+// Policy
+const pol=document.getElementById('policy');
+function openPolicy(){pol.classList.add('open');document.body.style.overflow='hidden';}
+function closePolicy(){pol.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pol.classList.contains('open'))closePolicy();});
+
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Reveal
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
