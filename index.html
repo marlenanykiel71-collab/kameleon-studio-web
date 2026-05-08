@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KAMELEON — Salon Fryzjerski | Koloryzacje, Strzyżenia, Pielęgnacja</title>
+<meta name="description" content="Salon Fryzjerski Kameleon — odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi. Umów wizytę telefonicznie." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="icon" href="./favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="./assets/logo.png" />
+<meta property="og:title" content="KAMELEON — Salon Fryzjerski" />
+<meta property="og:description" content="Odkryj swoją nową wersję w Salonie Kameleon." />
+<meta property="og:image" content="./og-image.png" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+<body>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <button class="brand" onclick="scrollToId('hero')" aria-label="KAMELEON — strona główna">
+      <img src="./assets/logo.png" alt="Logo Salonu Fryzjerskiego Kameleon" width="40" height="40" />
+      <span>KAMELEON</span>
+    </button>
+    <nav class="nav-links" aria-label="Główna nawigacja" id="navLinks"></nav>
+    <a href="tel:+48123456789" class="btn btn-cta nav-cta"><i class="fa-solid fa-phone"></i> +48 123 456 789</a>
+    <button class="burger" id="burger" aria-label="Otwórz menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav id="mobileNav" aria-label="Mobilna nawigacja"></nav>
+  </div>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <img class="bg" src="./assets/hero.jpg" alt="Wnętrze nowoczesnego salonu fryzjerskiego Kameleon" width="1920" height="1080" />
+    <div class="overlay"></div>
+    <div class="container">
+      <span class="eyebrow reveal">Salon Fryzjerski</span>
+      <h1 class="reveal">Odkryj swoją <span class="text-neon">nową wersję</span> w Kameleonie</h1>
+      <p class="lead reveal">Odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi. Stylizacje tworzone z pasją, dopasowane do Twojej osobowości.</p>
+      <div class="actions reveal">
+        <a href="tel:+48123456789" class="btn btn-cta"><i class="fa-solid fa-phone"></i> Zadzwoń teraz</a>
+        <a href="#oferta" class="btn btn-ghost">Zobacz ofertę</a>
+      </div>
+    </div>
+    <a href="#o-nas" class="scroll-down" aria-label="Przewiń niżej"><i class="fa-solid fa-chevron-down fa-lg"></i></a>
+  </section>
+
+  <section id="o-nas" class="section">
+    <div class="container grid grid-2">
+      <div class="about-img reveal">
+        <img src="./assets/about.jpg" alt="Zespół stylistów salonu Kameleon przy pracy" loading="lazy" width="1024" height="1024" />
+      </div>
+      <div class="reveal about-text">
+        <span class="eyebrow">O nas</span>
+        <h2>Pasja do fryzjerstwa, której zaufały setki klientów</h2>
+        <p><strong>Salon Fryzjerski Kameleon</strong> to miejsce, w którym pasja do fryzjerstwa łączy się z nowoczesnymi trendami i profesjonalną pielęgnacją.</p>
+        <p>Naszą misją jest pomoc w odkrywaniu Twojej nowej wersji — poprzez odważne koloryzacje, precyzyjne cięcia i regenerujące zabiegi.</p>
+        <p>Pracujemy wyłącznie na produktach najwyższej jakości, dbając o zdrowy blask i trwałość każdej stylizacji.</p>
+        <div class="stats">
+          <div><div class="n">12+</div><div class="l">lat doświadczenia</div></div>
+          <div><div class="n">5k+</div><div class="l">klientów rocznie</div></div>
+          <div><div class="n">100%</div><div class="l">naturalnych produktów</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Oferta</span>
+        <h2>Usługi szyte na miarę Twojego stylu</h2>
+        <p class="muted" style="margin-top:1rem">Od subtelnych poprawek po pełne metamorfozy — łączymy najnowsze trendy z indywidualnym podejściem do typu włosów i urody.</p>
+      </div>
+      <div class="grid grid-3" style="margin-top:3rem">
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-1.jpg" alt="Kreatywna koloryzacja włosów" loading="lazy" /></div>
+          <div class="body"><h3>Koloryzacje</h3><p>Odważne i klasyczne — balayage, ombre, refleksy.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-2.jpg" alt="Precyzyjne strzyżenie u stylistki" loading="lazy" /></div>
+          <div class="body"><h3>Strzyżenia</h3><p>Precyzyjne cięcia damskie, męskie i dziecięce.</p></div>
+        </article>
+        <article class="card reveal">
+          <div class="img-wrap"><img src="./assets/offer-3.jpg" alt="Zabieg regeneracji włosów" loading="lazy" /></div>
+          <div class="body"><h3>Pielęgnacja</h3><p>Regeneracja, keratyna, botoks i nawilżenie.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dlaczego-my" class="section">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Dlaczego my</span>
+        <h2>Cztery powody, dla których pokochasz Kameleona</h2>
+      </div>
+      <div class="why-grid" style="margin-top:3rem">
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-award"></i></div><h3>Doświadczeni styliści</h3><p>Zespół z wieloletnią praktyką i pasją do nowych trendów.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-leaf"></i></div><h3>Naturalne produkty</h3><p>Profesjonalne kosmetyki dbające o zdrowie włosów.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>Indywidualne podejście</h3><p>Każda stylizacja dopasowana do Twojej urody i osobowości.</p></div>
+        <div class="why-item reveal"><div class="icon"><i class="fa-solid fa-couch"></i></div><h3>Komfortowe wnętrze</h3><p>Nowoczesny, relaksujący klimat — Twoja chwila dla siebie.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow">Galeria</span>
+        <h2>Wybrane realizacje naszych stylistów</h2>
+      </div>
+      <div class="gallery" id="gallery" style="margin-top:3rem"></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Najczęściej zadawane pytania</h2>
+      </div>
+      <div class="faq" id="faq" style="margin-top:3rem"></div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section bg-card">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Zapraszamy do salonu</h2>
+        <p class="muted" style="margin-top:1rem">Skontaktuj się z nami telefonicznie lub mailowo — z przyjemnością odpowiemy na wszystkie pytania.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="reveal" href="https://maps.google.com/?q=ul.%20Przyk%C5%82adowa%2010%2C%20Warszawa" target="_blank" rel="noreferrer">
+          <div class="ico"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="lbl">Adres</div><div class="val">ul. Przykładowa 10, Warszawa</div>
+        </a>
+        <a class="reveal" href="tel:+48123456789">
+          <div class="ico"><i class="fa-solid fa-phone"></i></div>
+          <div class="lbl">Telefon</div><div class="val">+48 123 456 789</div>
+        </a>
+        <a class="reveal" href="mailto:kontakt@kameleon-salon.pl">
+          <div class="ico"><i class="fa-solid fa-envelope"></i></div>
+          <div class="lbl">E-mail</div><div class="val">kontakt@kameleon-salon.pl</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div class="brand" style="cursor:default">
+      <img src="./assets/logo.png" alt="Logo Kameleon" width="40" height="40" />
+      <div><div style="font-family:Poppins;font-weight:800;letter-spacing:.2em">KAMELEON</div><div style="font-size:.75rem;color:var(--muted)">Salon Fryzjerski</div></div>
+    </div>
+    <div class="copy">© <span id="year"></span> KAMELEON. Wszystkie prawa zastrzeżone.<button onclick="openPolicy()">Polityka prywatności</button></div>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <button class="close" onclick="closeLightbox()" aria-label="Zamknij"><i class="fa-solid fa-xmark fa-lg"></i></button>
+  <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<div class="modal policy" id="policy" role="dialog" aria-modal="true" aria-labelledby="polTitle">
+  <button class="close" onclick="closePolicy()" aria-label="Zamknij"><i class="fa-solid fa-xmark fa-lg"></i></button>
+  <div class="inner">
+    <h2 id="polTitle">Polityka prywatności</h2>
+    <p style="margin-top:1rem;color:var(--muted)">Niniejsza Polityka prywatności określa zasady przetwarzania danych osobowych w Salonie Fryzjerskim KAMELEON zgodnie z RODO.</p>
+    <h3>1. Administrator danych</h3><p>Administratorem danych jest Salon Fryzjerski KAMELEON.</p>
+    <h3>2. Zakres zbieranych danych</h3><p>Zbieramy dane wyłącznie w zakresie niezbędnym do realizacji wizyt (imię, telefon, e-mail).</p>
+    <h3>3. Cele przetwarzania</h3><p>Dane wykorzystywane są do umawiania i potwierdzania wizyt.</p>
+    <h3>4. Pliki cookies</h3><p>Strona może wykorzystywać cookies w celach statystycznych.</p>
+    <h3>5. Twoje prawa</h3><p>Masz prawo dostępu, poprawiania, usunięcia i sprzeciwu wobec przetwarzania danych.</p>
+    <h3>6. Kontakt</h3><p>W sprawach RODO skontaktuj się z nami telefonicznie lub mailowo.</p>
+    <div class="actions"><button class="btn btn-cta" onclick="closePolicy()">Zamknij</button></div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"KAMELEON","image":"./assets/hero.jpg","telephone":"+48123456789","email":"kontakt@kameleon-salon.pl","address":{"@type":"PostalAddress","streetAddress":"ul. Przykładowa 10","addressLocality":"Warszawa","addressCountry":"PL"},"priceRange":"$$"}
+</script>
+<script src="./assets/script.js" defer></script>
+</body>
+</html>
