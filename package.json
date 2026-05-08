@@ -1,0 +1,9 @@
+{
+  "name": "kameleon-static",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:dev": "mkdir -p dist && cp -r index.html assets favicon.ico og-image.png placeholder.svg robots.txt .nojekyll dist/",
+    "build": "mkdir -p dist && cp -r index.html assets favicon.ico og-image.png placeholder.svg robots.txt .nojekyll dist/"
+  }
+}
