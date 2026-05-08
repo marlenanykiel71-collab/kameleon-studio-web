@@ -1,0 +1,41 @@
+name: Deploy static site to gh-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Prepare production build
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp index.html dist/
+          cp -r assets dist/
+          cp .nojekyll dist/ 2>/dev/null || touch dist/.nojekyll
+          cp favicon.ico dist/ 2>/dev/null || true
+          cp og-image.png dist/ 2>/dev/null || true
+          cp placeholder.svg dist/ 2>/dev/null || true
+          cp robots.txt dist/ 2>/dev/null || true
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "deploy: production build"
