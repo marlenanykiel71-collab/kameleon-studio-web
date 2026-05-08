@@ -1,3 +1,4 @@
+import * as React from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar, type NavItem } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
@@ -38,7 +39,7 @@ export const Route = createFileRoute("/")({
 });
 
 // Modular: remove any item from this array to drop it from nav AND content.
-const SECTIONS: (NavItem & { Component: () => JSX.Element })[] = [
+const SECTIONS: (NavItem & { Component: () => React.ReactElement })[] = [
   { id: "o-nas", label: "O nas", Component: About },
   { id: "oferta", label: "Oferta", Component: Offer },
   { id: "dlaczego-my", label: "Dlaczego my", Component: WhyUs },
